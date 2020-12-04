@@ -18,20 +18,20 @@ function startTime() {
 
     var x = h * 60 + m;
     var p = "Day has not begun yet";
-    if (x > 515) {p = 1};
-    if (x > 555) {p = 2};
+    if (x > 515) {p = "Period 1"};
+    if (x > 555) {p = "Period 2"};
     if (x > 600) {p = "Break"};
-    if (x > 615) {p = 3};
-    if (x > 645) {p = 4};
-    if (x > 690) {p = 5};
-    if (x > 730) {p = 6};
-    if (x > 775) {p = 7};
-    if (x > 820) {p = 8};
-    if (x > 865) {p = 9};
-    if (x > 905) {p = 10};
+    if (x > 615) {p = "Period 3"};
+    if (x > 645) {p = "Period 4"};
+    if (x > 690) {p = "Period 5"};
+    if (x > 730) {p = "Period 6"};
+    if (x > 775) {p = "Period 7"};
+    if (x > 820) {p = "Period 8"};
+    if (x > 865) {p = "Period 9"};
+    if (x > 905) {p = "Period 10"};
     if (x > 945) {p = "Day is over"};
     document.getElementById('periodText').innerHTML =
-    "Period " + p;
+    p;
 
 }
 function checkTime(i) {
