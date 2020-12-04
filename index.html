@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VIS Clock</title>
+<link rel="stylesheet" href="styles.css">
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+
+    var x = h * 60 + m;
+    var p = "Day has not begun yet";
+    if (x > 515) {p = 1};
+    if (x > 555) {p = 2};
+    if (x > 600) {p = "Break"};
+    if (x > 615) {p = 3};
+    if (x > 645) {p = 4};
+    if (x > 690) {p = 5};
+    if (x > 730) {p = 6};
+    if (x > 775) {p = 7};
+    if (x > 820) {p = 8};
+    if (x > 865) {p = 9};
+    if (x > 905) {p = 10};
+    if (x > 945) {p = "Day is over"};
+    document.getElementById('periodText').innerHTML =
+    "Period " + p;
+
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
+</script>
+
+
+</head>
+<body onload="startTime()">
+
+<p id=img1><img src="Logo-Eco-School.svg" width="384" height="225"></p>
+
+<p id=introText>It is<p>
+<h1 id="clock"></h1>
+<div id=periodText></siv>
+
+</body>
+</html>
